@@ -110,6 +110,46 @@
    
    <!-- profile modal-->
    
+   <!--main body -->
+   <main>
+       <div class="container">
+           
+           <div class="row mt-4">
+               
+               <!-- first col -->
+               <div class="col-md-4">
+                   <!--categories -->
+                   <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+   All Posts
+  </a>
+  <%  PostDao d=new  PostDao( ConnectionProvider.getConnection());
+    ArrayList<category> list1 = d.getAllCategories();
+   for(category cc:list1)
+   { 
+     %>
+     <a href="#" class="list-group-item list-group-item-action"><%= cc.getName()%></a>
+   
+     <%
+      }
+   %>
+  
+</div>
+               </div>
+               
+               
+               <!-- second col-->
+               <div class="col-md-8">
+                   
+                   
+               </div>
+           </div>
+       </div>
+       
+   </main>
+   <!--end main-->
+   
+   <!-- end body-->
    <!-- Button trigger modal -->
 
 

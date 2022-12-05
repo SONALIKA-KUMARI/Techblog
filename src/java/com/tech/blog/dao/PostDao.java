@@ -63,10 +63,7 @@ public class PostDao{
         
        f=true;
       
-      
-         
-           
-     }
+      }
      catch(Exception e)
      {e.printStackTrace();
      }
