@@ -491,7 +491,7 @@
          let allPostRef=$('.c-link')[0]
           
            getPosts(0,allPostRef);
-         
+          
              });
      
  </script>
