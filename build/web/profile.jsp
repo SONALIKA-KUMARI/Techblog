@@ -139,15 +139,16 @@
                
                
                <!-- second col-->
-               <div class="col-md-8" id="post_container">
+               <div class="col-md-8">
                   <!-- post-->
                    
-                  <div class="container text-center" id="loader">
+      
+              <div class="container text-center" id="loader">
                       <i class="fa fa-refresh fa-4x fa-spin" > </i>
                           <h3 class="mt-2">Loading...</h3>  
                      
                   </div>
-                  <div class="container-fluid" id="post_container">
+                  <div class="container-fluid" id="post-container">
                       
                       
                   </div>
@@ -464,13 +465,14 @@
  <!-- end post js  -->
  <!-- loading pot using ajax -->
  <script>
-     $(doucment).ready(function(e){
+     $(document).ready(function(e){
          $.ajax({
-             url:"load_posts.jsp",
+            
+            url:"load_posts.jsp",
            success : function(data,textStatus ,jqXHR){
                console.log(data);
                $("#loader").hide();
-               $("#post_container").html(data);
+               $("#post-container").html(data);
            }
          });
      });

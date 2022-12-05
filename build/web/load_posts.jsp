@@ -11,13 +11,19 @@
    for(Post p:posts)
    {
    %>
-   <div class="col-md-6">
+   <div class="col-md-6 mt-2">
        
-       <div class="card">
+        <img class="card-img-top" src="blog_picks/<%=p.getpPic()%>" alt="Card image cap">
+       
+       
+       
+       <div class="card ">
            
            <div class="card-body">
-               
-               <h3><%= p.getTitle() %></h3>
+               <b><%= p.getpTitle()%></b>
+               <p><%=p.getpContent()%></p>
+               <pre>
+                   <%=p.getpCode()%> </pre>
            </div>
            
        </div>
@@ -27,8 +33,5 @@
    
    <%
     }
-   
-
-
-%>
+  %>
 </div> 
