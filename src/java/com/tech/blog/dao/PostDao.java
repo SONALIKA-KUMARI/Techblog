@@ -8,6 +8,7 @@ import com.tech.blog.entities.Post;
 import com.tech.blog.entities.category;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 public class PostDao{
     Connection con;
 
@@ -67,7 +68,61 @@ public class PostDao{
      catch(Exception e)
      {e.printStackTrace();
      }
-     
+    
      return f;
     }
+   public List<Post> getAllPosts()
+    { List<Post> list=new ArrayList<>();
+       //fetch all the post
+       try{
+           PreparedStatement p=con.prepareStatement("select* from posts");
+           ResultSet set=p.executeQuery();
+           while(set.next())
+           {int pid=set.getInt("pid");
+           String pTitle=set.getString("pTitle");
+           String pContent=set.getString("pContent");
+           String pCode=set.getString("pCode");
+           String pPic=set.getString("pPic");
+           Timestamp data=set.getTimestamp("pDate");
+           int catId=set.getInt("catId");
+           int userId=set.getInt("userId");
+           
+           Post post=new Post(pid, pTitle, pContent, pCode, pPic, data, catId, userId);
+           list.add(post);
+           
+           
+           }
+       }catch(Exception e)
+       {e.printStackTrace();
+       }
+       return list;
+        
+    }
+    public List<Post> getPostByCatId(int catId)
+        { 
+          List<Post> list=new ArrayList<>();
+       //fetch all the post
+       try{
+           PreparedStatement p=con.prepareStatement("select* from posts where catId=?");
+           p.setInt(1, catId);
+           ResultSet set=p.executeQuery();
+           while(set.next())
+           {int pid=set.getInt("pid");
+           String pTitle=set.getString("pTitle");
+           String pContent=set.getString("pContent");
+           String pCode=set.getString("pCode");
+           String pPic=set.getString("pPic");
+           Timestamp data=set.getTimestamp("pDate");
+           int userId=set.getInt("userId");
+           
+           Post post=new Post(pid, pTitle, pContent, pCode, pPic, data, catId, userId);
+           list.add(post);
+           
+           
+           }
+       }catch(Exception e)
+       {e.printStackTrace();
+       }
+       return list;
+      }
 }

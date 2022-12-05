@@ -139,15 +139,25 @@
                
                
                <!-- second col-->
-               <div class="col-md-8">
+               <div class="col-md-8" id="post_container">
+                  <!-- post-->
                    
-                   
+                  <div class="container text-center" id="loader">
+                      <i class="fa fa-refresh fa-4x fa-spin" > </i>
+                          <h3 class="mt-2">Loading...</h3>  
+                     
+                  </div>
+                  <div class="container-fluid" id="post_container">
+                      
+                      
+                  </div>
                </div>
            </div>
        </div>
        
    </main>
-   <!--end main-->
+   
+ <!--end main-->
    
    <!-- end body-->
    <!-- Button trigger modal -->
@@ -403,7 +413,9 @@
    <script>
        
        $(document).ready(function(e){
-           alert("loaded....");
+         ///
+         //
+         //    alert("loaded....");
          // 
          $("#add-post-form").on("submit",function(event){
              
@@ -449,10 +461,21 @@
        
    </script>
    
-   
-   
-   <!-- end post js  -->
-   
+ <!-- end post js  -->
+ <!-- loading pot using ajax -->
+ <script>
+     $(doucment).ready(function(e){
+         $.ajax({
+             url:"load_posts.jsp",
+           success : function(data,textStatus ,jqXHR){
+               console.log(data);
+               $("#loader").hide();
+               $("#post_container").html(data);
+           }
+         });
+     });
+     
+ </script>
    
   
      
