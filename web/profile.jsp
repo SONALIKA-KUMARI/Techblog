@@ -120,7 +120,7 @@
                <div class="col-md-4">
                    <!--categories -->
                    <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">
+  <a href="#" onclick="getPosts(0, this)" class=" c-link list-group-item list-group-item-action active">
    All Posts
   </a>
   <%  PostDao d=new  PostDao( ConnectionProvider.getConnection());
@@ -128,7 +128,7 @@
    for(category cc:list1)
    { 
      %>
-     <a href="#" class="list-group-item list-group-item-action"><%= cc.getName()%></a>
+     <a href="#" onclick="getPosts(<%=cc.getCid()%>,this)" class="c-link list-group-item list-group-item-action"><%= cc.getName()%></a>
    
      <%
       }
@@ -463,19 +463,36 @@
    </script>
    
  <!-- end post js  -->
- <!-- loading pot using ajax -->
+ <!-- loading post using ajax -->
  <script>
-     $(document).ready(function(e){
-         $.ajax({
+     
+     function getPosts(catId, temp){
+         $("#loader").show();
+         $("#post-container").hide();
+         $(".c-link").removeClass('active');
+          $.ajax({
             
             url:"load_posts.jsp",
+            data : {cid:catId},
            success : function(data,textStatus ,jqXHR){
                console.log(data);
                $("#loader").hide();
+               $("#post-container").show();
                $("#post-container").html(data);
+               $(temp).addClass('active');
            }
          });
-     });
+
+         
+     }
+     
+     
+     $(document).ready(function(e){
+         let allPostRef=$('.c-link')[0]
+          
+           getPosts(0,allPostRef);
+         
+             });
      
  </script>
    

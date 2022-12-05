@@ -6,8 +6,24 @@
 <div class="row">
 
 <%
+    Thread.sleep(1000);
+    
    PostDao d=new PostDao(ConnectionProvider.getConnection());
-   List<Post> posts=d.getAllPosts();
+   List<Post> posts=null;
+   
+   int cid=Integer.parseInt(request.getParameter("cid"));
+   if(cid==0)
+   {  posts=d.getAllPosts();
+   
+
+    }else{ 
+    posts=d.getPostByCatId(cid);
+     }
+   if(posts.size()==0)
+   {out.println("<h3 class='display-3 text-center'>No Posts int this category..</h3>");
+     return ;
+    }
+  
    for(Post p:posts)
    {
    %>
