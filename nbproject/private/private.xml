@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/survlets/loginServlet.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/dao/UserDao.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/dao/PostDao.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/survlets/AddPostServlet.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/entities/category.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/helper/ConnectionProvider.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/profile.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/normal_navbaar.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/login_page.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/src/java/com/tech/blog/entities/Post.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/load_posts.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/show_blog_page.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/TechBlog/web/register_page.jsp</file>
         </group>
     </open-files>
 </project-private>
